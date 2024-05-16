@@ -19,16 +19,17 @@ const roomData = [
   },
   {
     id: 3,
-    name: "Chambre",
-    img: bedroom,
-    class: "bedroomCard",
-  },
-  {
-    id: 4,
     name: "Salle de bain",
     img: sdb,
     class: "bathroomCard",
   },
+  {
+    id: 4,
+    name: "Chambre",
+    img: bedroom,
+    class: "bedroomCard",
+  },
+
   {
     id: 5,
     name: "Garage",
