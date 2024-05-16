@@ -1,0 +1,32 @@
+.img-logo-acceuil {
+  width: 30vw;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-clic {
+  color: var(--primary-color);
+  font-size: 30px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+/* Media Queries Desktop */
+@media screen and (width > 799px) {
+  .navbar {
+    column-gap: 40%;
+  }
+  .img-logo-acceuil {
+    width: 10vw;
+    margin-right: auto;
+  }
+}
