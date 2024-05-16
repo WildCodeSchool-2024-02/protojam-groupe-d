@@ -28,6 +28,79 @@
   justify-content: center;
   align-items: center;
 }
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  border-collapse: collapse;
+  border-radius: 5px;
+  background-color: var(--third-color);
+  margin-bottom: 0.5rem;
+}
+
+td {
+  padding: 10px;
+  color: var(--font-color);
+  font-family: var(--title-font);
+  font-size: 1rem;
+}
+
+tbody tr {
+  width: 100%;
+}
+
+table:hover {
+  background-color: #d7c482;
+}
+
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 60px;
+  height: 30px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+label:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: var(--primary-color);
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 30px;
+}
+
 @media screen and (min-width: 799px) {
   .DetailsContainer {
     flex-direction: row;

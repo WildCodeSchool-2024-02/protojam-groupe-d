@@ -18,6 +18,11 @@ function RoomCards() {
           </article>
         </Link>
       ))}
+      <div className="scroll-to-top">
+        <a href="#top" className="scroll-button">
+          ↑
+        </a>
+      </div>
     </div>
   );
 }

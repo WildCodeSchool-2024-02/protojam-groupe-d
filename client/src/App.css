@@ -82,6 +82,38 @@ main {
   transition: width 0.5s;
 }
 
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.scroll-button {
+  background-color: var(--font-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.scroll-button:hover {
+  background-color: #45a049;
+}
+
+.scroll-button::before {
+  content: "🌿";
+  display: block;
+  font-size: 24px;
+  line-height: 1;
+}
 /* Media Queries Desktop */
 @media screen and (width > 799px) {
 }

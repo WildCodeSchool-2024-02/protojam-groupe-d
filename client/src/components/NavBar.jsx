@@ -1,7 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { Link } from "react-router-dom";
-// eslint-disable-next-line import/order
-import logo from "../assets/images/logo.png";
 
 import "../styles/NavBar.css";
 import { useState } from "react";
@@ -12,6 +9,9 @@ import List from "@mui/material/List";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
+
+import logo from "../assets/images/logo.png";
+
 
 function NavBar() {
   const [open, setOpen] = useState(false);
@@ -59,6 +59,7 @@ function NavBar() {
       <Button id="menu-clic" onClick={toggleDrawer(true)}>
         &#9776;
       </Button>
+      <div id="top">&nbsp;</div>
       <img className="img-logo-acceuil" src={logo} alt="logo" />
       <Drawer open={open} onClose={toggleDrawer(false)} anchor="top">
         {DrawerList}
