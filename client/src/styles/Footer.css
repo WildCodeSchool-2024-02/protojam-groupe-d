@@ -1,0 +1,13 @@
+.FooterComponent {
+  background-color: var(--primary-color);
+  padding: 1rem;
+  bottom: 0;
+  margin-top: 10rem;
+}
+
+.FooterComponent p {
+  color: var(--third-color);
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
