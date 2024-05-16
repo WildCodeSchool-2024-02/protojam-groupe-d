@@ -1,5 +1,5 @@
 -- SQLBook: Code
--- Active: 1711381363336@@127.0.0.1@3306@versaille
+-- Active: 1713169372026@@127.0.0.1@3306@versaille
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -12,7 +12,6 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-CREATE DATABASE versaille;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -31,12 +30,10 @@ CREATE DATABASE versaille;
 CREATE TABLE item (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    consumption INT(20),
+    consumption FLOAT (20),
     is_active BOOL,
     is_always_active BOOL
 );
-
-ALTER TABLE item MODIFY COLUMN consumption FLOAT;
 --
 -- Contenu de la table `item`
 --
@@ -63,16 +60,14 @@ VALUES
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 -- Table Room 
-DROP TABLE room;
 
 CREATE TABLE room (
   id INT AUTO_INCREMENT PRIMARY KEY, 
   name VARCHAR (255) NOT NULL,
-  consumption INT(20) NOT NULl, 
+  consumption FLOAT (20) NOT NULl, 
   light_on BOOL NOT NULL
 );
 
-ALTER TABLE room MODIFY COLUMN consumption FLOAT;
 
 INSERT INTO
     `room` (`id`, `name`, `consumption`, `light_on`)
@@ -83,8 +78,6 @@ INSERT INTO
     (5, 'Garage', 0.1, 0); -- Ordinateur, TV, Lampe, Console, Telephone
 
 -- Table de jointure
-
-DROP TABLE room_item;
 
 CREATE TABLE Room_Item (
   id INT AUTO_INCREMENT PRIMARY KEY,
