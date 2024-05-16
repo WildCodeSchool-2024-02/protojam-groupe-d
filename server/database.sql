@@ -12,7 +12,7 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-CREATE DATABASE versaille;
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -31,9 +31,9 @@ CREATE DATABASE versaille;
 CREATE TABLE item (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    consumption INT(20),
-    is_active BOOL,
-    is_always_active BOOL
+    consumption FLOAT(20),
+    is_active BOOLEAN,
+    is_always_active BOOLEAN
 );
 
 ALTER TABLE item MODIFY COLUMN consumption FLOAT;
@@ -98,5 +98,5 @@ INSERT INTO
     (5, 1, 5),
     (6, 2, 6),
     (6, 2, 2),
-    (6, 2, 15),
+    (6, 2, 15)
     ; -- Ordinateur, TV, Lampe, Console, Telephone

@@ -1,13 +1,13 @@
 <?php
 
 require 'vendor/autoload.php';
-if (file_exists('config/db.php')) {
-    require 'config/db.php';
+if (file_exists(__DIR__ . '/config/db.php')) {
+    require __DIR__ . '/config/db.php';
 } else {
-    require 'config/db.php.dist';
+    require __DIR__ . '/config/db.php.dist';
 }
 
-require 'config/config.php';
+require __DIR__ . '/config/config.php';
 
 try {
     $pdo = new PDO(
