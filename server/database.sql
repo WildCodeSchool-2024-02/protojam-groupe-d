@@ -12,7 +12,7 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-
+CREATE DATABASE versaille;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -31,9 +31,9 @@ SET time_zone = "+00:00";
 CREATE TABLE item (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    consumption FLOAT(20),
-    is_active BOOLEAN,
-    is_always_active BOOLEAN
+    consumption INT(20),
+    is_active BOOL,
+    is_always_active BOOL
 );
 
 ALTER TABLE item MODIFY COLUMN consumption FLOAT;
@@ -63,18 +63,19 @@ VALUES
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 -- Table Room 
+DROP TABLE room;
 
-CREATE TABLE Room (
+CREATE TABLE room (
   id INT AUTO_INCREMENT PRIMARY KEY, 
   name VARCHAR (255) NOT NULL,
   consumption INT(20) NOT NULl, 
   light_on BOOL NOT NULL
 );
 
-ALTER TABLE Room MODIFY COLUMN consumption FLOAT;
+ALTER TABLE room MODIFY COLUMN consumption FLOAT;
 
 INSERT INTO
-    `Room` (`id`, `name`, `consumption`, `light_on`)
+    `room` (`id`, `name`, `consumption`, `light_on`)
      VALUES (1, 'Cuisine', 0.2, 0),
     (2, 'Salle à manger', 0.4, 0),  -- TV, Décodeur, lampe, console, box
     (3, 'Salle de bain', 0.2, 0),  -- Seche cheveux, lampe, 
@@ -83,11 +84,15 @@ INSERT INTO
 
 -- Table de jointure
 
+DROP TABLE room_item;
+
 CREATE TABLE Room_Item (
   id INT AUTO_INCREMENT PRIMARY KEY,
   room_id INT (30) NOT NULL,
   item_id INT (30) NOT NULL
 );
+
+
 
 INSERT INTO
     `Room_Item` (`id`, `room_id`, `item_id`)
@@ -96,7 +101,15 @@ INSERT INTO
     (3, 1, 3),  -- Seche cheveux, lampe, 
     (4, 1, 4),
     (5, 1, 5),
-    (6, 2, 6),
-    (6, 2, 2),
-    (6, 2, 15)
-    ; -- Ordinateur, TV, Lampe, Console, Telephone
+    (6, 2, 7),
+    (7, 2, 8),
+    (8, 2, 9),
+    (9, 2, 13),
+    (10, 3, 10),
+    (11, 3, 11),
+    (12, 4, 6),
+    (13, 4, 8),
+    (14, 4, 7),
+    (15, 5, 14),
+    (16, 5, 12),
+    (17, 2, 15); -- Ordinateur, TV, Lampe, Console, Telephone
