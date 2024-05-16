@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import "../styles/RoomDetails.css";
@@ -52,6 +52,11 @@ function RoomDetails() {
           ))}
         </section>
       </div>
+      <Link to="/">
+        <button className="goBack" type="button">
+          &#10162;
+        </button>
+      </Link>
     </>
   );
 }

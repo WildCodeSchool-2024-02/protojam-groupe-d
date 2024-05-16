@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 import "../styles/NavBar.css";
 import { useState } from "react";
 import Divider from "@mui/material/Divider";
@@ -9,7 +8,6 @@ import List from "@mui/material/List";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
-
 import logo from "../assets/images/logo.png";
 
 
