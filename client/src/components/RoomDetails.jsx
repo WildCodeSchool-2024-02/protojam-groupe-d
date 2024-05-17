@@ -1,9 +1,11 @@
 import { useLocation, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useConso } from "../contexts/ConsoContext";
 
 import "../styles/RoomDetails.css";
 
 function RoomDetails() {
+  const { handleConso } = useConso();
   const location = useLocation();
   const { room } = location.state;
   const [items, setItems] = useState([]); // Init items per room
@@ -21,8 +23,10 @@ function RoomDetails() {
   const [toogle, setToogle] = useState(true); // Init toogle swtich
 
   const handleToggle = () => {
-    setToogle(!toogle);
+    setToogle(!toogle); // switch
     setRoomComsuption(() => (!toogle ? room.rcomsuption : 0));
+
+    handleConso(room.rcomsuption, toogle);
   };
 
   return (

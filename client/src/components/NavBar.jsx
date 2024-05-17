@@ -33,7 +33,7 @@ function NavBar() {
       <List>
         {[
           <Link to="/" key={Link} style={{ color: "var(--third-color)" }}>
-            Acceuil
+            Accueil
           </Link>,
           <Link
             to="/historique"
