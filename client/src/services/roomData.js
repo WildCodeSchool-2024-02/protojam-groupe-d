@@ -10,28 +10,28 @@ const roomData = [
     name: "Cuisine",
     img: kitchen,
     class: "kitchenCard",
-    rcomsuption: 0.2,
+    rcomsuption: 2.5,
   },
   {
     id: 2,
     name: "Salon",
     img: living,
     class: "livingCard",
-    rcomsuption: 0.4,
+    rcomsuption: 1.1,
   },
   {
     id: 3,
     name: "Salle de bain",
     img: sdb,
     class: "bathroomCard",
-    rcomsuption: 0.2,
+    rcomsuption: 1.4,
   },
   {
     id: 4,
     name: "Chambre",
     img: bedroom,
     class: "bedroomCard",
-    rcomsuption: 0.3,
+    rcomsuption: 0.7,
   },
 
   {
@@ -39,7 +39,7 @@ const roomData = [
     name: "Garage",
     img: garage,
     class: "garageCard",
-    rcomsuption: 0.1,
+    rcomsuption: 12.3,
   },
 ];
 

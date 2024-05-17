@@ -8,10 +8,19 @@ function RoomDetails() {
   const { handleConso } = useConso();
   const location = useLocation();
   const { room } = location.state;
-  const [items, setItems] = useState([]); // Init items per room
-  const [roomComsuption, setRoomComsuption] = useState(
-    Number(room.rcomsuption)
-  ); // Init room consum.
+  const [items, setItems] = useState([
+    {
+      id: 10,
+      name: "Machine à laver",
+      consumption: 0.5,
+      light_on: 0,
+      rname: "Salle de bain",
+      rconsumption: 3,
+      is_active: 0,
+      is_always_active: 0,
+      iconsumption: 0.5,
+    },
+  ]); // Init items per room
 
   useEffect(() => {
     fetch(`https://protojam-groupe-d.onrender.com/show/?id=${room.id}`)
@@ -20,19 +29,25 @@ function RoomDetails() {
       .catch((error) => console.error(error));
   }, [room.id]);
 
+  // eslint-disable-next-line no-unused-vars
+  const [roomComsuption, setRoomComsuption] = useState(
+    Number(items[0].rconsumption)
+  ); // Init room consum.
+
   const [toogle, setToogle] = useState(true); // Init toogle swtich
 
   const handleToggle = () => {
     setToogle(!toogle); // switch
     setRoomComsuption(() => (!toogle ? room.rcomsuption : 0));
-
     handleConso(room.rcomsuption, toogle);
   };
+
+  console.info(items[0]);
 
   return (
     <>
       <h1 className="detailsTitle">
-        {room.name} : {roomComsuption} KWh
+        {room.name} : {items[0].rconsumption} KWh
       </h1>
       <div className="DetailsContainer">
         <section className="RoomDetailsComponent">

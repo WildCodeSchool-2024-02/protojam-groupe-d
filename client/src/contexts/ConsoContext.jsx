@@ -4,7 +4,7 @@ const ConsoContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 export function ConsoProvider({ children }) {
-  const [consoGlobal, setConsoGlobal] = useState(1.2);
+  const [consoGlobal, setConsoGlobal] = useState(19.1);
 
   const handleConso = (conso, toogle) => {
     if (toogle) {
