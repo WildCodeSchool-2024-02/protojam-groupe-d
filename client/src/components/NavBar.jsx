@@ -10,7 +10,6 @@ import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
 import logo from "../assets/images/logo.png";
 
-
 function NavBar() {
   const [open, setOpen] = useState(false);
 

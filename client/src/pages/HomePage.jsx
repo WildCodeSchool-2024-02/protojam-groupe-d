@@ -6,9 +6,9 @@ function HomePage() {
     <>
       <h1>Mon habitation</h1>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius fuga
-        quis, corrupti dolorem consequatur neque dolorum amet fugit molestiae
-        modi.
+        Cette application permet aux utilisateurs de prendre des décisions
+        éclairées concernant leur consommation d'énergie, ce qui réduit à la
+        fois leur impact environnemental et leurs factures d'électricité.
       </p>
       <ProgressionBar />
       <RoomCards />

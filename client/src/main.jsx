@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ConsoProvider } from "./contexts/ConsoContext";
 
 import App from "./App";
 import HomePage from "./pages/HomePage";
@@ -36,6 +37,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ConsoProvider>
+      <RouterProvider router={router} />
+    </ConsoProvider>
   </React.StrictMode>
 );

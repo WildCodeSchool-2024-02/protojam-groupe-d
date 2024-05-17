@@ -18,8 +18,12 @@ function RoomDetails() {
       .catch((error) => console.error(error));
   }, [room.id]);
 
-  const handleConso = (iconsumption) =>
-    setRoomComsuption((prevState) => prevState + iconsumption); // trigger le context pour MAJ la barre de conso en fonction des items switched
+  const [toogle, setToogle] = useState(true); // Init toogle swtich
+
+  const handleToggle = () => {
+    setToogle(!toogle);
+    setRoomComsuption(() => (!toogle ? room.rcomsuption : 0));
+  };
 
   return (
     <>
@@ -28,7 +32,23 @@ function RoomDetails() {
       </h1>
       <div className="DetailsContainer">
         <section className="RoomDetailsComponent">
-          <img src={room.img} alt={room.name} className="roomDetailPic" />
+          <img
+            src={room.img}
+            alt={room.name}
+            className="roomDetailPic"
+            style={{
+              boxShadow: toogle
+                ? "#f5efb5 0px 6px 45px"
+                : "#f5efb5 0px 0px 0px",
+            }}
+          />
+          <input
+            type="checkbox"
+            id="switch"
+            checked={toogle}
+            onClick={() => handleToggle()}
+          />
+          <label htmlFor="switch">Toggle</label>
         </section>
         <section className="details-conso">
           <h3>Consommation en détails</h3>
@@ -38,14 +58,6 @@ function RoomDetails() {
                 <tr>
                   <td className="consumptionItem">{item.name} :</td>
                   <td className="consumption">{item.iconsumption} KWh</td>
-                  <td className="consumption">
-                    <input
-                      type="checkbox"
-                      id="switch"
-                      onClick={() => handleConso(item.iconsumption)}
-                    />
-                    <label htmlFor="switch">Toggle</label>
-                  </td>
                 </tr>
               </tbody>
             </table>
