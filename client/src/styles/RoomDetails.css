@@ -21,7 +21,13 @@
 .roomDetailPic {
   width: 90%;
   max-width: 370px;
+  border-radius: 180px;
+  box-shadow:
+    #f5efb5 0px 2px 40px,
+    #f5efb5 0px -5px 40px,
+    #f5efb5 0px 2px 40px;
 }
+
 .RoomDetailsComponent {
   display: flex;
   flex-direction: column;
