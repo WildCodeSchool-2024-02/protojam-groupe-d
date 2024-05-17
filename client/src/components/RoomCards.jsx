@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import roomData from "../services/roomData";
-
 import "../styles/RoomCards.css";
 
 function RoomCards() {
@@ -9,7 +8,7 @@ function RoomCards() {
       {roomData.map((room) => (
         <Link
           key={room.id}
-          to={`/room/${room.name}`}
+          to={`/room/${room.id}`}
           state={{ room }}
           className="roomLink"
         >
@@ -19,6 +18,11 @@ function RoomCards() {
           </article>
         </Link>
       ))}
+      <div className="scroll-to-top">
+        <a href="#top" className="scroll-button">
+          ↑
+        </a>
+      </div>
     </div>
   );
 }
