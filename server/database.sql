@@ -44,11 +44,11 @@ VALUES
 (3, 'Plaque de Cuisson', 0.5, 0, 0),
 (4, 'Lave-vaisselle', 0.5, 0, 0),
 (5, 'Congélateur', 0.9, 0, 0),
-(6, 'Ordinateur portable', 0.3, 0, 0),
+(6, 'Ordinateur portable', 0.3, 0, 0),  
 (7, 'Téléviseur LCD', 0.3, 0, 0),
 (8, 'Smartphone', 0.1, 0, 0),
 (9, 'Box (internet + TV)', 0.7, 1, 1),
-(10, 'Machine à laver', 0.5, 0, 0),
+(10, 'Machine à laver', 0.5, 0, 0), 
 (11, 'Sèche-linge', 0.9, 0, 0),
 (12, 'Chauffe-eau', 4.6, 1, 1),
 (13, 'Ordinateur', 0.1, 0, 0),
@@ -71,11 +71,11 @@ CREATE TABLE room (
 
 INSERT INTO
     `room` (`id`, `name`, `consumption`, `light_on`)
-     VALUES (1, 'Cuisine', 0.2, 0),
-    (2, 'Salle à manger', 0.4, 0),  -- TV, Décodeur, lampe, console, box
-    (3, 'Salle de bain', 0.2, 0),  -- Seche cheveux, lampe, 
-    (4, 'Chambre', 0.3, 0),
-    (5, 'Garage', 0.1, 0); -- Ordinateur, TV, Lampe, Console, Telephone
+     VALUES (1, 'Cuisine', 2.5, 0),
+    (2, 'Salle à manger', 1.1, 0),  -- TV, Décodeur, lampe, console, box
+    (3, 'Salle de bain', 1.4, 0),  -- Seche cheveux, lampe, 
+    (4, 'Chambre', 0.7, 0),
+    (5, 'Garage', 12.3, 0); -- Ordinateur, TV, Lampe, Console, Telephone
 
 -- Table de jointure
 
@@ -105,4 +105,4 @@ INSERT INTO
     (14, 4, 7),
     (15, 5, 14),
     (16, 5, 12),
-    (17, 2, 15); -- Ordinateur, TV, Lampe, Console, Telephone
+    (17, 5, 15); -- Ordinateur, TV, Lampe, Console, Telephone
